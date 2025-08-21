@@ -56,7 +56,7 @@ input:focus {
 
 @font-face {
     font-family: 'Arial-Black';
-    src: url(./font/ARIBLK.TTF);
+    src: url(./font/ARIBLK.ttf);
 }
 
 /* Formal Styling */
