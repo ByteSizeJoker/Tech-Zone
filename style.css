@@ -1,0 +1,82 @@
+/* Main CSS */
+
+
+/* Standard Body Settings */
+body {
+    background-color: #181a1b;
+    color: #d5d3cf;
+    width: var(--screen-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:link,
+a:visited {
+    color: #d5d3cf;
+}
+
+input:focus {
+    outline: none;
+    border: #5b3cff solid 2px !important;
+}
+
+
+/* Local Fonts */
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./font/Montserrat-SemiBold.ttf');
+
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('./font/Montserrat-Regular.ttf');
+
+}
+
+@font-face {
+    font-family: 'Orbitron-SemiBold';
+    src: url('./font/Orbitron-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Medium';
+    src: url('./font/OpenSans-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('./font/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('./font/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Arial-Black';
+    src: url(./font/ARIBLK.TTF);
+}
+
+/* Formal Styling */
+.button {
+    color: #d5d3cf;
+    background-color: #5d3cff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 16px;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.inputText {
+    background-color: #252828;
+    border-radius: 7px;
+    border: #d5d3cf solid 1px;
+    font-size: 15px;
+    font-family: 'Montserrat-SemiBold';
+    color: #d5d3cf;
+    padding: 0px 10px;
+}
