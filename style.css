@@ -6,6 +6,7 @@ body {
     background-color: #181a1b;
     color: #d5d3cf;
     width: var(--screen-width);
+    height: var(--screen-height);
     margin-left: auto;
     margin-right: auto;
 }
