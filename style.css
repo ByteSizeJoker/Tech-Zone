@@ -3,17 +3,32 @@
 
 /* Standard Body Settings */
 body {
-    background-color: #181a1b;
-    color: #d5d3cf;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     width: var(--screen-width);
     height: var(--screen-height);
     margin-left: auto;
     margin-right: auto;
 }
 
+hr {
+    background-color: var(--hr-color);
+    border: none;
+    border-top: 2px solid var(--hr-color);
+}
+
+table {
+    border: none;
+    background-color: var(--table-bg-color);
+}
+
+.td-separator {
+    background-color: var(--bg-color);
+}
+
 a:link,
 a:visited {
-    color: #d5d3cf;
+    color: var(--text-color);
 }
 
 input:focus {
@@ -21,6 +36,37 @@ input:focus {
     border: #5b3cff solid 2px !important;
 }
 
+
+/* Formal Styling */
+.button {
+    color: #d5d3cf !important;
+    background-color: #5d3cff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 16px;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.themeButton {
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.inputText {
+    background-color: var(--table-bg-color);
+    border-radius: 7px;
+    border: var(--text-color) solid 1px;
+    font-size: 15px;
+    font-family: 'Montserrat-SemiBold';
+    color: var(--text-color);
+    padding: 0px 10px;
+}
 
 /* Local Fonts */
 @font-face {
@@ -58,26 +104,4 @@ input:focus {
 @font-face {
     font-family: 'Arial-Black';
     src: url(./font/ARIBLK.ttf);
-}
-
-/* Formal Styling */
-.button {
-    color: #d5d3cf;
-    background-color: #5d3cff;
-    border-radius: 10px;
-    text-decoration: none;
-    font-family: 'Montserrat-SemiBold';
-    font-size: 16px;
-    padding: 10px 15px;
-    display: inline-block;
-}
-
-.inputText {
-    background-color: #252828;
-    border-radius: 7px;
-    border: #d5d3cf solid 1px;
-    font-size: 15px;
-    font-family: 'Montserrat-SemiBold';
-    color: #d5d3cf;
-    padding: 0px 10px;
 }

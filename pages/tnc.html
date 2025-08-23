@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>TechZone | Terms & Conditions</title>
-        <link href="../style.css" rel="stylesheet" />
-        <script src="../script.js"></script>
+        <link href="/style.css" rel="stylesheet" />
+        <script src="/script.js"></script>
     </head>
 
     <body style="font-family: 'Montserrat-SemiBold'; font-size: smaller">
@@ -12,25 +12,24 @@
             behavior="scroll"
             direction="left"
             scrollamount="3"
-            style="font-family: 'Montserrat-SemiBold'; font-size: 18px">
+            style="font-family: 'Montserrat-SemiBold'; font-size: 18px"
+        >
             10,000+ devices bought every year
         </marquee>
         <br /><br />
         <p></p>
 
         <!-- Website Logo and Name -->
+        <!-- Website Logo and Name -->
         <table
-            border="0"
             cellpadding="0"
             cellspacing="0"
-            style="margin-left: 15px">
+            style="margin-left: 15px; background-color: #00000000"
+        >
             <tr>
                 <td>
-                    <a href="../main.html">
-                        <img
-                            src="../images/icons/logo.png"
-                            alt="TechZone Logo"
-                            width="175px" />
+                    <a href="/main.html">
+                        <img id="logo" alt="TechZone Logo" width="175px" />
                     </a>
                 </td>
                 <td valign="top">
@@ -50,48 +49,69 @@
                 </td>
             </tr>
         </table>
+
+        <button
+            class="themeButton"
+            onclick="toggleTheme()"
+            style="float: right; margin-top: -40px; margin-right: 20px"
+        >
+            <img id="theme-mode" width="25px" alt="Theme" />
+        </button>
         <p></p>
 
         <!-- Divider Line -->
-        <hr color="#e9e6f0" width="99%" />
+        <hr width="99%" />
 
         <!--Options-->
         <table
-            border="0"
             align="center"
             cellpadding="5px"
-            style="font-family: 'Montserrat-SemiBold'; font-size: 16px">
+            style="
+                font-family: 'Montserrat-SemiBold';
+                font-size: 16px;
+                background-color: #00000000;
+            "
+        >
             <tr>
                 <td width="25px"></td>
                 <td>
                     <a
-                        href="../main.html#shop"
-                        style="
-                            text-decoration: none;
-                            font-size: 20px;
-                            color: #d5d3cf;
-                        ">
+                        href="/main.html#shop"
+                        style="text-decoration: none; font-size: 20px"
+                    >
                         Explore
                     </a>
                 </td>
-                <td width="83%"></td>
+                <td width="73%"></td>
                 <td>
-                    <a href="../main.html" style="text-decoration: none">
-                        <img
-                            src="../images/icons/home.png"
-                            width="33"
-                            alt="Home" />
+                    <a href="/main.html" style="text-decoration: none">
+                        <img id="home" width="33" alt="Home" />
+                    </a>
+                </td>
+                <td width="10px"></td>
+                <td>
+                    <a href="./account.html" style="text-decoration: none">
+                        <img id="account" width="33" alt="Account" />
+                    </a>
+                </td>
+                <td width="10px"></td>
+                <td>
+                    <a href="/main.html#query" style="text-decoration: none">
+                        <img id="support" width="35" alt="Support" />
                     </a>
                 </td>
                 <td width="10px"></td>
                 <td>
                     <a
-                        href="../main.html#support"
-                        style="text-decoration: none">
+                        href="https://buymeacoffee.com/bytesizedjoker"
+                        style="text-decoration: none"
+                        target="_blank"
+                    >
                         <img
-                            src="../images/icons/support.png"
+                            id="buy-us-a-kofi"
                             width="35"
-                            alt="Support" />
+                            alt="Buy us a coffee"
+                        />
                     </a>
                 </td>
                 <td width="3"></td>
@@ -176,7 +196,8 @@
         <ul>
             <li>
                 Your personal information is handled as per our
-                <a href="privacy.html" style="color: #5d3cff">Privacy Policy</a
+                <a href="/pages/privacy.html" style="color: #5d3cff"
+                    >Privacy Policy</a
                 >.
             </li>
             <li>
@@ -195,13 +216,13 @@
 
         <!-- Back to Home Link -->
         <center>
-            <a href="../main.html" style="color: #5d3cff; font-size: small"
+            <a href="/main.html" style="color: #5d3cff; font-size: small"
                 >↩ Back to Home</a
             >
         </center>
 
         <!-- Divider Line -->
-        <hr color="#e9e6f0" />
+        <hr />
 
         <!-- Something -->
         <p style="font-size: 12px; color: #888">

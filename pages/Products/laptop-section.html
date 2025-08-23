@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>TechZone | Laptops</title>
-        <link href="../../style.css" rel="stylesheet" />
-        <script src="../../script.js"></script>
+        <link href="/style.css" rel="stylesheet" />
+        <script src="/script.js"></script>
     </head>
 
     <body>
@@ -11,7 +11,8 @@
             behavior="scroll"
             direction="left"
             scrollamount="3"
-            style="font-family: 'Montserrat-SemiBold'; font-size: 18px">
+            style="font-family: 'Montserrat-SemiBold'; font-size: 18px"
+        >
             10,000+ devices bought every year
         </marquee>
         <br /><br />
@@ -19,17 +20,14 @@
 
         <!-- Website Logo and Name -->
         <table
-            border="0"
             cellpadding="0"
             cellspacing="0"
-            style="margin-left: 15px">
+            style="margin-left: 15px; background-color: #00000000"
+        >
             <tr>
                 <td>
-                    <a href="../../main.html">
-                        <img
-                            src="../../images/icons/logo.png"
-                            alt="TechZone Logo"
-                            width="175px" />
+                    <a href="/main.html">
+                        <img id="logo" alt="TechZone Logo" width="175px" />
                     </a>
                 </td>
                 <td valign="top">
@@ -49,55 +47,55 @@
                 </td>
             </tr>
         </table>
+
+        <button
+            class="themeButton"
+            onclick="toggleTheme()"
+            style="float: right; margin-top: -40px; margin-right: 20px"
+        >
+            <img id="theme-mode" width="25px" alt="Theme" />
+        </button>
         <p></p>
 
         <!-- Divider Line -->
-        <hr color="#d5d3cf" width="99%" />
+        <hr width="99%" />
 
         <!--Options-->
         <table
-            border="0"
             align="center"
             cellpadding="5px"
-            style="font-family: 'Montserrat-SemiBold'; font-size: 16px">
+            style="
+                font-family: 'Montserrat-SemiBold';
+                font-size: 16px;
+                background-color: #00000000;
+            "
+        >
             <tr>
                 <td width="25px"></td>
                 <td>
                     <a
-                        href="../../main.html#shop"
-                        style="text-decoration: none; font-size: 20px">
+                        href="/main.html#shop"
+                        style="text-decoration: none; font-size: 20px"
+                    >
                         Explore
                     </a>
                 </td>
                 <td width="73%"></td>
                 <td>
-                    <a href="../../main.html" style="text-decoration: none">
-                        <img
-                            src="../../images/icons/home.png"
-                            width="33"
-                            alt="Home" />
+                    <a href="/main.html" style="text-decoration: none">
+                        <img id="home" width="33" alt="Home" />
                     </a>
                 </td>
                 <td width="10px"></td>
                 <td>
-                    <a
-                        href="../../pages/cart.html"
-                        style="text-decoration: none">
-                        <img
-                            src="../../images/icons/cart.png"
-                            width="40"
-                            alt="Cart" />
+                    <a href="/pages/cart.html" style="text-decoration: none">
+                        <img id="cart" width="40" alt="Cart" />
                     </a>
                 </td>
                 <td width="10px"></td>
                 <td>
-                    <a
-                        href="../../pages/account.html"
-                        style="text-decoration: none">
-                        <img
-                            src="../../images/icons/account.png"
-                            width="35"
-                            alt="Account" />
+                    <a href="/pages/account.html" style="text-decoration: none">
+                        <img id="account" width="35" alt="Account" />
                     </a>
                 </td>
                 <td width="10px"></td>
@@ -105,11 +103,13 @@
                     <a
                         href="https://buymeacoffee.com/bytesizedjoker"
                         style="text-decoration: none"
-                        target="_blank">
+                        target="_blank"
+                    >
                         <img
-                            src="../../images/icons/Buy-us-a-kofi.png"
+                            id="buy-us-a-kofi"
                             width="35"
-                            alt="Buy us a coffee" />
+                            alt="Buy us a coffee"
+                        />
                     </a>
                 </td>
                 <td width="3"></td>
@@ -125,37 +125,38 @@
                 text-align: center;
                 margin-top: 10px;
                 margin-left: 48px;
-                color: #d5d3cf;
-                background-color: #252828;
+                color: var(--font-color);
+                background-color: var(--table-bg-color);
                 padding: 10px 20px;
                 border-radius: 10px;
                 border-bottom-left-radius: 0px;
                 border-bottom-right-radius: 0px;
                 width: 20%;
-            ">
+            "
+        >
             Laptops
         </p>
 
         <!-- Product Sections Table -->
         <table
-            border="0"
             align="center"
-            bgcolor="#252828"
             style="
                 border-radius: 10px;
                 margin-top: -32px;
                 border-top-left-radius: 0px;
             "
-            width="93%">
+            width="93%"
+        >
             <!-- Gaming Keyboard -->
             <tr height="30px"></tr>
             <tr>
                 <td width="5%"></td>
                 <td align="right">
                     <img
-                        src="../../images/products/Laptops/apple-mac-book-air-m3.png"
+                        src="/images/products/Laptops/apple-mac-book-air-m3.png"
                         width="408px"
-                        style="border-radius: 10px" />
+                        style="border-radius: 10px"
+                    />
                 </td>
                 <td width="2%"></td>
                 <td width="60%" align="left">
@@ -189,7 +190,8 @@
                         style="
                             font-family: 'Montserrat-SemiBold';
                             font-size: 16px;
-                        ">
+                        "
+                    >
                         <li>Processor: Apple M3 chip</li>
 
                         <li>RAM: 8 GB to 24 GB Unified Memory</li>
@@ -210,9 +212,10 @@
                         >Price: ₹94,994 - ₹1,63,990</span
                     >
                     <a
-                        href="../account.html"
+                        href="/pages/account.html"
                         class="button"
-                        style="margin-left: 50px; background-color: #5d3cff">
+                        style="margin-left: 50px; background-color: #5d3cff"
+                    >
                         Choose Model
                     </a>
                 </td>
@@ -224,7 +227,9 @@
             <tr height="5px">
                 <td
                     colspan="5"
-                    style="border-radius: 2px; background-color: #181a1b"></td>
+                    style="border-radius: 2px"
+                    class="td-separator"
+                ></td>
             </tr>
             <tr height="20px"></tr>
 
@@ -233,9 +238,10 @@
                 <td width="5%"></td>
                 <td align="right">
                     <img
-                        src="../../images/products/Laptops/asus-rog-zephyrus.png"
+                        src="/images/products/Laptops/asus-rog-zephyrus.png"
                         width="408px"
-                        style="border-radius: 10px" />
+                        style="border-radius: 10px"
+                    />
                 </td>
                 <td width="2%"></td>
                 <td width="60%" align="left">
@@ -270,7 +276,8 @@
                         style="
                             font-family: 'Montserrat-SemiBold';
                             font-size: 16px;
-                        ">
+                        "
+                    >
                         <li>Processor: AMD Ryzen 9 or Intel Core i9</li>
 
                         <li>RAM: 16 GB to 32 GB DDR5</li>
@@ -294,10 +301,11 @@
                         >Price: ₹1,23,990 - ₹2,79,990</span
                     >
                     <a
-                        href="../account.html"
-                        href="../account.html"
+                        href="/pages/account.html"
+                        href="/pages/account.html"
                         class="button"
-                        style="margin-left: 50px; background-color: #5d3cff">
+                        style="margin-left: 50px; background-color: #5d3cff"
+                    >
                         Choose Model
                     </a>
                 </td>
@@ -308,7 +316,9 @@
             <tr height="5px">
                 <td
                     colspan="5"
-                    style="border-radius: 2px; background-color: #181a1b"></td>
+                    style="border-radius: 2px"
+                    class="td-separator"
+                ></td>
             </tr>
             <tr height="20px"></tr>
 
@@ -317,9 +327,10 @@
                 <td width="5%"></td>
                 <td align="right">
                     <img
-                        src="../../images/products/Laptops/hp-specter.png"
+                        src="/images/products/Laptops/hp-specter.png"
                         width="408px"
-                        style="border-radius: 10px" />
+                        style="border-radius: 10px"
+                    />
                 </td>
                 <td width="2%"></td>
                 <td width="60%" align="left">
@@ -354,7 +365,8 @@
                         style="
                             font-family: 'Montserrat-SemiBold';
                             font-size: 16px;
-                        ">
+                        "
+                    >
                         <li>Processor: Intel Core Ultra 7</li>
 
                         <li>RAM: 16 GB to 32 GB</li>
@@ -377,9 +389,10 @@
                         >Price: ₹1,21,499 - ₹1,80,000</span
                     >
                     <a
-                        href="../account.html"
+                        href="/pages/account.html"
                         class="button"
-                        style="margin-left: 50px; background-color: #5d3cff">
+                        style="margin-left: 50px; background-color: #5d3cff"
+                    >
                         Choose Model
                     </a>
                 </td>
@@ -390,7 +403,9 @@
             <tr height="5px">
                 <td
                     colspan="5"
-                    style="border-radius: 2px; background-color: #181a1b"></td>
+                    style="border-radius: 2px"
+                    class="td-separator"
+                ></td>
             </tr>
             <tr height="20px"></tr>
 
@@ -399,9 +414,10 @@
                 <td width="5%"></td>
                 <td align="right">
                     <img
-                        src="../../images/products/Laptops/lenovo-think-pad.png"
+                        src="/images/products/Laptops/lenovo-think-pad.png"
                         width="408px"
-                        style="border-radius: 10px" />
+                        style="border-radius: 10px"
+                    />
                 </td>
                 <td width="2%"></td>
                 <td width="60%" align="left">
@@ -435,7 +451,8 @@
                         style="
                             font-family: 'Montserrat-SemiBold';
                             font-size: 16px;
-                        ">
+                        "
+                    >
                         <li>Processor: Intel Core i5 to i7</li>
 
                         <li>RAM: 16 GB to 32 GB</li>
@@ -456,9 +473,10 @@
                         >Price: ₹45,991 - ₹1,73,330</span
                     >
                     <a
-                        href="../account.html"
+                        href="/pages/account.html"
                         class="button"
-                        style="margin-left: 50px; background-color: #5d3cff">
+                        style="margin-left: 50px; background-color: #5d3cff"
+                    >
                         Choose Model
                     </a>
                 </td>
@@ -469,7 +487,9 @@
             <tr height="5px">
                 <td
                     colspan="5"
-                    style="border-radius: 2px; background-color: #181a1b"></td>
+                    style="border-radius: 2px"
+                    class="td-separator"
+                ></td>
             </tr>
             <tr height="20px"></tr>
 
@@ -478,9 +498,10 @@
                 <td width="5%"></td>
                 <td align="right">
                     <img
-                        src="../../images/products/Laptops/dell-xps15.png"
+                        src="/images/products/Laptops/dell-xps15.png"
                         width="408px"
-                        style="border-radius: 10px" />
+                        style="border-radius: 10px"
+                    />
                 </td>
                 <td width="2%"></td>
                 <td width="60%" align="left">
@@ -514,7 +535,8 @@
                         style="
                             font-family: 'Montserrat-SemiBold';
                             font-size: 16px;
-                        ">
+                        "
+                    >
                         <li>Processor: Intel Core i7 or i9</li>
 
                         <li>RAM: 16 GB to 64 GB</li>
@@ -535,9 +557,10 @@
                         >Price: ₹1,43,500 - ₹2,50,000</span
                     >
                     <a
-                        href="../account.html"
+                        href="/pages/account.html"
                         class="button"
-                        style="margin-left: 50px; background-color: #5d3cff">
+                        style="margin-left: 50px; background-color: #5d3cff"
+                    >
                         Choose Model
                     </a>
                 </td>
@@ -546,17 +569,16 @@
         <br /><br />
 
         <!-- Divider Line -->
-        <hr color="#e9e6f0" />
+        <hr />
         <br /><br />
 
         <!-- Signup Promo Bar -->
         <table
-            border="0"
-            bgcolor="#252828"
             align="center"
             width="90%"
             cellpadding="20px"
-            style="border-radius: 10px">
+            style="border: 1px solid var(--text-color); border-radius: 10px"
+        >
             <tr>
                 <td>
                     <span style="font-size: 18px; font-family: 'Arial-Black'"
@@ -574,13 +596,14 @@
                 </td>
                 <td>
                     <a
-                        href="../../pages/account.html#signup"
+                        href="/pages/account.html#signup"
                         class="button"
                         style="
                             font-family: Arial-Black;
                             font-size: 12px;
                             padding: 12px 20px;
-                        ">
+                        "
+                    >
                         SIGN UP FOR EMAILS
                     </a>
                 </td>
@@ -594,7 +617,8 @@
                             font-size: 12px;
                             padding: 12px 20px;
                             border-radius: 10px;
-                        ">
+                        "
+                    >
                         JOIN OUR DISCORD SERVER
                     </a>
                 </td>
@@ -605,7 +629,7 @@
 
         <!-- Small Logo -->
 
-        <a href="../../main.html" style="text-decoration: none">
+        <a href="/main.html" style="text-decoration: none">
             <span
                 style="
                     font-family: 'Montserrat-SemiBold';
@@ -623,11 +647,14 @@
 
         <!-- Query Table -->
         <table
-            border="0"
             align="center"
             cellpadding="10px"
             cellspacing="2px"
-            style="font-family: 'Montserrat-SemiBold'">
+            style="
+                font-family: 'Montserrat-SemiBold';
+                background-color: #00000000;
+            "
+        >
             <tr align="left">
                 <th style="font-family: 'Orbitron-SemiBold'">About TechZone</th>
                 <th width="20%"></th>
@@ -638,51 +665,51 @@
             <tr height="10px"></tr>
             <tr align="left" style="font-size: 11px">
                 <td>
-                    <a href="../../pages/about.html#about">About Us</a>
+                    <a href="/pages/about.html#about">About Us</a>
                 </td>
                 <td width="20%"></td>
                 <td>
-                    <a href="../../pages/buying-guide.html#howtochoose"
+                    <a href="/pages/buying-guide.html#howtochoose"
                         >How to choose the right product</a
                     >
                 </td>
                 <td width="20%"></td>
                 <td>
-                    <a href="../../pages/help.html#FAQ"
+                    <a href="/pages/help.html#FAQ"
                         >Frequently Asked Questions (FAQ)</a
                     >
                 </td>
             </tr>
             <tr align="left" style="font-size: 11px">
                 <td>
-                    <a href="../../pages/about.html#mission">Our Mission</a>
+                    <a href="/pages/about.html#mission">Our Mission</a>
                 </td>
                 <td width="20%"></td>
                 <td>
-                    <a href="../../pages/buying-guide.html#productspecs"
+                    <a href="/pages/buying-guide.html#productspecs"
                         >Understanding product specifications</a
                     >
                 </td>
                 <td width="20%"></td>
                 <td>
-                    <a href="../../pages/help.html#order&support"
+                    <a href="/pages/help.html#order&support"
                         >Order tracking and support</a
                     >
                 </td>
             </tr>
             <tr align="left" style="font-size: 11px">
                 <td>
-                    <a href="../../pages/about.html#team">Meet the Team</a>
+                    <a href="/pages/about.html#team">Meet the Team</a>
                 </td>
                 <td width="20%"></td>
                 <td>
-                    <a href="../../pages/buying-guide.html#payment"
+                    <a href="/pages/buying-guide.html#payment"
                         >Safe and secure payment options</a
                     >
                 </td>
                 <td width="20%"></td>
                 <td>
-                    <a href="../../pages/help.html#service"
+                    <a href="/pages/help.html#service"
                         >Contact customer service</a
                     >
                 </td>
@@ -694,21 +721,22 @@
 
         <!-- TC and PP -->
         <table
-            id="support"
-            border="0"
+            id="query"
             align="left"
             style="
                 margin-left: 60px;
                 font-family: 'Montserrat-SemiBold';
                 font-size: 11px;
-            ">
+                background-color: #00000000;
+            "
+        >
             <tr>
                 <td>
-                    <a href="../../pages/tnc.html">Terms of Service</a>
+                    <a href="/pages/tnc.html">Terms of Service</a>
                 </td>
                 <td width="20px"></td>
                 <td>
-                    <a href="../../pages/privacy.html">Privacy Policy</a>
+                    <a href="/pages/privacy.html">Privacy Policy</a>
                 </td>
             </tr>
         </table>
