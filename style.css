@@ -9,21 +9,29 @@ body {
     height: var(--screen-height);
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 1.25s,
+        color 1.25s;
 }
 
 hr {
     background-color: var(--hr-color);
     border: none;
     border-top: 2px solid var(--hr-color);
+    transition: background-color 1.25s,
+        color 1.25s;
 }
 
 table {
     border: none;
     background-color: var(--table-bg-color);
+    transition: background-color 1.25s,
+        color 1.25s;
 }
 
 .td-separator {
     background-color: var(--bg-color);
+    transition: background-color 1.25s,
+        color 1.25s;
 }
 
 a:link,
@@ -31,11 +39,18 @@ a:visited {
     color: var(--text-color);
 }
 
+input {
+    transition: 0.5s;
+}
+
 input:focus {
     outline: none;
     border: #5b3cff solid 2px !important;
 }
 
+input:hover {
+    transform: scale(1.04);
+}
 
 /* Formal Styling */
 .button {
@@ -47,15 +62,44 @@ input:focus {
     font-size: 16px;
     padding: 10px 15px;
     display: inline-block;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: #7a62ff !important;
+    transform: scale(1.05);
 }
 
 .themeButton {
     width: 45px;
     height: 45px;
     background-color: var(--bg-color);
-    border: 1px solid var(--text-color);
+    border: 2px solid var(--text-color);
     border-radius: 50%;
     display: inline-block;
+    transition: background-color 1s,
+        border 1s;
+}
+
+.themeButton:hover {
+    transform: rotateZ(360deg);
+    transition: 1.5s;
+}
+
+#home,
+#cart,
+#account,
+#buy-us-a-kofi,
+#support {
+    transition: 0.3s;
+}
+
+#home:hover,
+#cart:hover,
+#account:hover,
+#buy-us-a-kofi:hover,
+#support:hover {
+    transform: rotate(15deg) scale(1.1);
 }
 
 .inputText {
@@ -66,6 +110,33 @@ input:focus {
     font-family: 'Montserrat-SemiBold';
     color: var(--text-color);
     padding: 0px 10px;
+}
+
+.login-google {
+    background-color: none;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 110px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'OpenSans-Bold';
+    color: #5d3cff;
+    outline: #5d3cff solid 2px;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.login-google:hover {
+    background-color: #5b3cff;
+}
+
+.display {
+    transition: 0.5s;
+}
+
+.display:hover {
+    transform: scale(1.025);
 }
 
 /* Local Fonts */
