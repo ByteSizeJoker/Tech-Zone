@@ -4,11 +4,17 @@
 const defaultWidth = innerWidth - 8;
 const defaultHeight = innerHeight - 8;
 
+// Get parent folder path
+const currentDir = window.location.pathname.split("/").slice(0, -1).join("/");
+let currentDirTokens = currentDir.split("/");
+const parentDir = currentDirTokens.slice(0, currentDirTokens.indexOf("pages")).join("/").slice(1);
+console.log(currentDir);
+console.log(parentDir);
+console.log(parentDir.split("/").pop());
+currentDirTokens = null;
+
 // If screen dimensions not are saved in localStorage then calculate 16:9 ratio on load
-if (
-    !localStorage.getItem("screenWidth") ||
-    !localStorage.getItem("screenHeight")
-) {
+if (!localStorage.getItem("screenWidth") || !localStorage.getItem("screenHeight")) {
     window.onload = convertTo169();
 }
 
@@ -71,23 +77,17 @@ function convertTo169() {
         newHeight = Math.round(newWidth * requiredRatio);
     }
 
-    //? Debug: Print new width and height
-    console.log("New width is: " + newWidth);
-    console.log("New height is: " + newHeight);
+    // //? Debug: Print new width and height
+    // console.log("New width is: " + newWidth);
+    // console.log("New height is: " + newHeight);
 
     // Store new width and height
     localStorage.setItem("screenWidth", newWidth + "px");
     localStorage.setItem("screenHeight", newHeight + "px");
 
     // Set new width and height
-    document.documentElement.style.setProperty(
-        "--screen-width",
-        newWidth + "px"
-    );
-    document.documentElement.style.setProperty(
-        "--screen-height",
-        newHeight + "px"
-    );
+    document.documentElement.style.setProperty("--screen-width", newWidth + "px");
+    document.documentElement.style.setProperty("--screen-height", newHeight + "px");
 }
 
 //* Get current theme from localStorage
@@ -104,44 +104,20 @@ function setTheme(theme) {
         document.documentElement.style.setProperty("--bg-color", "#e0e0e0ff");
         document.documentElement.style.setProperty("--text-color", "#2e2e2e");
         document.documentElement.style.setProperty("--hr-color", "#bdbdbd");
-        document.documentElement.style.setProperty(
-            "--table-bg-color",
-            "#ffffff"
-        );
-        document.documentElement.style.setProperty(
-            "--info-bg-color",
-            "#fff8d6"
-        );
-        document.documentElement.style.setProperty(
-            "--info-text-color",
-            "#2e2e2e"
-        );
-        document.documentElement.style.setProperty(
-            "--input-caption-color",
-            "rgba(37, 37, 37, 0.7)"
-        );
+        document.documentElement.style.setProperty("--table-bg-color", "#ffffff");
+        document.documentElement.style.setProperty("--info-bg-color", "#fff8d6");
+        document.documentElement.style.setProperty("--info-text-color", "#2e2e2e");
+        document.documentElement.style.setProperty("--input-caption-color", "rgba(37, 37, 37, 0.7)");
     } else if (theme == "dark") {
         localStorage.setItem("theme", "dark");
 
         document.documentElement.style.setProperty("--bg-color", "#181a1b");
         document.documentElement.style.setProperty("--text-color", "#d5d3cf");
         document.documentElement.style.setProperty("--hr-color", "#e9e6f0");
-        document.documentElement.style.setProperty(
-            "--table-bg-color",
-            "#252828"
-        );
-        document.documentElement.style.setProperty(
-            "--info-bg-color",
-            "#d5d3cf"
-        );
-        document.documentElement.style.setProperty(
-            "--info-text-color",
-            "#252828"
-        );
-        document.documentElement.style.setProperty(
-            "--input-caption-color",
-            "rgba(192, 192, 192, 0.7)"
-        );
+        document.documentElement.style.setProperty("--table-bg-color", "#252828");
+        document.documentElement.style.setProperty("--info-bg-color", "#d5d3cf");
+        document.documentElement.style.setProperty("--info-text-color", "#252828");
+        document.documentElement.style.setProperty("--input-caption-color", "rgba(192, 192, 192, 0.7)");
     } else {
         console.log("Invalid theme");
         console.log("Available themes: light, dark");
@@ -153,7 +129,7 @@ function setTheme(theme) {
 //* Toggle between dark and light theme
 // Called by theme button in the document
 function toggleTheme() {
-    console.log("Toggling theme");
+    // console.log("Toggling theme");
     let theme = getTheme();
     if (theme == "light") {
         setTheme("dark");
@@ -168,20 +144,11 @@ function toggleTheme() {
 //* Update all icons on the page based on theme
 // Loops through predefined IDs and replaces their src paths
 function updateAllIcons() {
-    const iconIDs = [
-        "account",
-        "buy-us-a-kofi",
-        "cart",
-        "home",
-        "logo",
-        "logo1",
-        "support",
-        "theme-mode",
-    ];
+    const iconIDs = ["account", "buy-us-a-kofi", "cart", "home", "logo", "logo1", "support", "theme-mode"];
 
     for (let i = 0; i < iconIDs.length; i++) {
         updateIcon(iconIDs[i], iconIDs[i] + ".png");
-        console.log(iconIDs[i] + ", " + iconIDs[i] + ".png");
+        // console.log(iconIDs[i] + ", " + iconIDs[i] + ".png");
     }
 }
 
@@ -194,7 +161,7 @@ function updateIcon(elementID, iconName) {
         return;
     }
     element.src = setIconPath(iconName);
-    console.log(`Icon updated for #${elementID} → ${element.src}`);
+    // console.log(`Icon updated for #${elementID} → ${element.src}`);
 }
 
 //* Build the correct file path for an icon based on theme
@@ -202,20 +169,35 @@ function updateIcon(elementID, iconName) {
 function setIconPath(iconName) {
     const theme = getTheme();
 
-    let folderPath = "/images/icons/";
+    let parentDirName = parentDir.split("/").pop();
+    let folderPath = null;
+    let iconPath = "/images/icons/";
+    let dirTokens = currentDir.split("/");
+
+    if (dirTokens.includes("products")) {
+        folderPath = "../.." + iconPath;
+    } else if (dirTokens.includes("pages")) {
+        folderPath = ".." + iconPath;
+    } else if (dirTokens.includes(parentDirName)) {
+        folderPath = "." + iconPath;
+    } else {
+        return null;
+    }
+
+    console.log(folderPath);
 
     if (theme == "light") {
         folderPath = folderPath + "light/";
-        console.log("Light folder Path: " + folderPath);
+        // console.log("Light folder Path: " + folderPath);
     } else if (theme == "dark") {
         folderPath = folderPath + "dark/";
-        console.log("Dark folder Path: " + folderPath);
+        // console.log("Dark folder Path: " + folderPath);
     } else {
         console.log("Invalid theme");
         console.log("Available themes: light, dark");
     }
 
-    console.log("Icon Path: " + folderPath);
+    console.log("Icon Path: " + folderPath + iconName);
     return folderPath + iconName;
 }
 
@@ -224,10 +206,7 @@ function setIconPath(iconName) {
 //? Debug: Directly set screen dimensions
 function setScreenDimensions(width, height) {
     document.documentElement.style.setProperty("--screen-width", width + "px");
-    document.documentElement.style.setProperty(
-        "--screen-height",
-        height + "px"
-    );
+    document.documentElement.style.setProperty("--screen-height", height + "px");
 }
 
 //? Debug: Print current screen dimensions to console (from localStorage)
@@ -252,15 +231,8 @@ function overrideScreenDimensions(newWidth, newHeight) {
     localStorage.setItem("screenHeight", overriddenHeight);
     setScreenDimensions(overriddenWidth, overriddenHeight);
 
-    console.log(
-        "Screen Dimensions overridden to: " +
-            overriddenWidth +
-            " x " +
-            overriddenHeight
-    );
-    console.log(
-        "Default screen Dimensions are: " + screenWidth + " x " + screenHeight
-    );
+    console.log("Screen Dimensions overridden to: " + overriddenWidth + " x " + overriddenHeight);
+    console.log("Default screen Dimensions are: " + screenWidth + " x " + screenHeight);
 }
 
 //? Debug: Reset stored dimensions back to default
@@ -268,6 +240,10 @@ function resetScreenDimensions() {
     localStorage.removeItem("screenWidth");
     localStorage.removeItem("screenHeight");
     setScreenDimensions(defaultWidth, defaultHeight);
+}
+
+function clearStorage() {
+    localStorage.clear();
 }
 
 //? Debug: Print all available commands
@@ -278,11 +254,10 @@ function help() {
     console.log("setTheme(theme) - theme: light, dark");
     console.log("toggleTheme()");
     console.log("updateAllIcons()");
-    console.log(
-        "updateIcon(elementID, iconName) - elementID: string (without #), iconName: string (without extension)"
-    );
+    console.log("updateIcon(elementID, iconName) - elementID: string (without #), iconName: string (without extension)");
     console.log("setScreenDimensions(width, height)");
     console.log("getScreenDimensions()");
     console.log("overrideScreenDimensions(newWidth, newHeight)");
     console.log("resetScreenDimensions()");
+    console.log("clearStorage()");
 }
